@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #loading {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Momentum Stock helper</h1>
+    <p id="loading">Loading data...</p>
+    <div>
+        <label for="formulaSelect">Select Formula:</label>
+        <select id="formulaSelect">
+            <!-- Options will be dynamically populated by JavaScript -->
+        </select>
+        <p>Execution Date :<span id="execDate"></span></p>
+    </div>
+    <table id="stockTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Stock Name</th>
+                <th>Sector</th>
+                <th>Price</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
