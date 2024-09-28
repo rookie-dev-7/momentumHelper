@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmYwZWI0NDBjOTQ0MTI3MjFkOWU2NGQiLCJpYXQiOjE3MjcwOTc5NTAsImV4cCI6MTcyNzI3MDc1MH0.JpxGs-6OkCy-i96klu_LvtvnCtZ4T15A-QSgebGiPAA'
+                Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmYwZWI0NDBjOTQ0MTI3MjFkOWU2NGQiLCJpYXQiOjE3Mjc1MDAxODAsImV4cCI6MTcyNzY3Mjk4MH0.1RGTXG-wwBPJmzOZZH0OG5jvtWHmMU3OiESQK0bf7f0'
             }
         })  // Replace with your API URL
             .then(response => response.json())
