@@ -114,7 +114,37 @@ document.addEventListener('DOMContentLoaded', () => {
     request.strategyValue = formula;
         loadingText.style.display = 'block';
         stockTable.style.display = 'none';
+        let headers = new Headers();
 
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Accept', '*/*');
+      
+        headers.append('Access-Control-Allow-Origin', '*');
+        // headers.append('Access-Control-Allow-Credentials', 'true');
+        const url = 'https://pastebin.com/api/api_raw.php';
+        let token ='';
+const options = {
+  method: 'POST',
+  headers,
+//   mode:'no-cors',
+  body: new URLSearchParams({'api_dev_key': 'ih3JSagK2_q9lf9r1nlbDVe9-btrVfmD',
+    'api_user_key':'b47a10e9100629e0529205851220f524',
+    'api_option':'show_paste',
+    'api_paste_key':'5sDB3jFs'
+  })
+};
+
+try {
+  fetch(url, options).then(response=>{
+    
+    response.text().then(res=> token = res)
+  });
+} catch (error) {
+  console.error(error);
+}
+if(!token){
+    token ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmYwZWI0NDBjOTQ0MTI3MjFkOWU2NGQiLCJpYXQiOjE3MjkxODA2MjAsImV4cCI6MTcyOTM1MzQyMH0.TbDEVPgzHNaG5huRiUkTd-Y9Yn5QFZdIIrC9UC7Ab-o'
+}
     
         fetch('https://green-sigma-node-backend-lz42rlmeha-uc.a.run.app/api/sigmaScannerTrial',{
             method:'POST',
@@ -122,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmYwZWI0NDBjOTQ0MTI3MjFkOWU2NGQiLCJpYXQiOjE3Mjc1MDAxODAsImV4cCI6MTcyNzY3Mjk4MH0.1RGTXG-wwBPJmzOZZH0OG5jvtWHmMU3OiESQK0bf7f0'
+                Authorization:'Bearer '+token
             }
         })  // Replace with your API URL
             .then(response => response.json())
